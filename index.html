@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inovasi Maggot BSF</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display= برق&gt;" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body,
@@ -68,8 +68,28 @@
             flex-direction: column;
             justify-content: space-between;
             font-size: 18px;
-            transition: transform 0.3s ease-in-out; /* Tambahkan transisi */
+            transition: transform 0.3s ease-in-out;
+            overflow-y: auto;
+            padding-bottom: 20px;
         }
+
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
 
         .sidebar a {
             display: flex;
@@ -96,7 +116,7 @@
             margin-left: 270px;
             padding: 20px;
             padding-top: 20px;
-            transition: margin-left 0.3s ease-in-out; /* Tambahkan transisi */
+            transition: margin-left 0.3s ease-in-out;
         }
 
         .judul-inovasi {
@@ -218,9 +238,8 @@
             font-size: 0.8em;
         }
 
-        /* Styling untuk tombol hamburger */
         .hamburger-menu {
-            display: none; /* Sembunyikan secara default */
+            display: none;
             position: fixed;
             top: 15px;
             left: 15px;
@@ -231,70 +250,127 @@
             background-color: #fff;
             padding: 5px 10px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Konten dokumentasi */
+        .dokumentasi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .dokumentasi-item {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer; /* Menandakan elemen bisa diklik */
+        }
+
+        .dokumentasi-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .dokumentasi-item img,
+        .dokumentasi-item video { /* Styling untuk gambar dan video dalam grid */
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .dokumentasi-caption {
+            padding: 15px;
+            font-size: 1rem;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Styling untuk modal gambar */
+        .modal-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0; /* Hapus padding default modal body */
+        }
+
+        .modal-body img,
+        .modal-body video {
+            max-width: 100%;
+            max-height: 80vh; /* Batasi tinggi gambar/video di modal */
+            object-fit: contain; /* Agar gambar tidak terpotong */
+            display: block;
         }
 
         /* --- MEDIA QUERIES UNTUK LAYAR KECIL (RESPONSIVE) --- */
         @media (max-width: 768px) {
             .sidebar {
-                width: 0; /* Sembunyikan sidebar di layar kecil */
-                transform: translateX(-250px); /* Geser ke kiri untuk menyembunyikan */
-                padding-top: 60px; /* Beri ruang untuk tombol hamburger */
+                width: 0;
+                transform: translateX(-250px);
+                padding-top: 60px;
             }
 
             .sidebar.active {
                 width: 250px;
-                transform: translateX(0); /* Tampilkan sidebar saat aktif */
+                transform: translateX(0);
             }
 
             .content {
-                margin-left: 0; /* Hapus margin kiri di layar kecil */
-                padding-top: 60px; /* Beri ruang untuk tombol hamburger */
+                margin-left: 0;
+                padding-top: 60px;
             }
 
             .hamburger-menu {
-                display: block; /* Tampilkan tombol hamburger */
+                display: block;
             }
 
             .judul-inovasi {
-                font-size: 1.8rem; /* Ukuran font lebih kecil untuk judul */
+                font-size: 1.8rem;
             }
 
             .subjudul-inovasi {
-                font-size: 1.2rem; /* Ukuran font lebih kecil untuk subjudul */
+                font-size: 1.2rem;
             }
 
             .logo-atas-inovasi img {
-                height: 40px; /* Ukuran logo lebih kecil */
+                height: 40px;
             }
 
             .innovator-card {
-                margin-bottom: 20px; /* Tambah jarak antar kartu di layar kecil */
+                margin-bottom: 20px;
             }
 
             .menu-section h3 {
-                font-size: 1.4rem; /* Ukuran font lebih kecil untuk h3 */
+                font-size: 1.4rem;
                 padding: 10px 15px;
                 border-left: 6px solid #4caf50;
             }
 
             .menu-section h4 {
-                font-size: 1.2rem; /* Ukuran font lebih kecil untuk h4 */
+                font-size: 1.2rem;
                 padding: 8px 12px;
                 border-left: 4px solid #66bb6a;
             }
 
             .menu-section ul {
-                padding-left: 20px; /* Sesuaikan indentasi daftar */
+                padding-left: 20px;
             }
 
             .menu-section table {
-                font-size: 0.9em; /* Perkecil ukuran font tabel */
+                font-size: 0.9em;
             }
 
             .menu-section table th,
             .menu-section table td {
-                padding: 8px; /* Perkecil padding tabel */
+                padding: 8px;
+            }
+
+            .dokumentasi-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -323,6 +399,7 @@
             <a href="#" onclick="showSection('manfaat'); toggleSidebar()"><i class="fas fa-lightbulb"></i> Tujuan & Manfaat</a>
             <a href="#" onclick="showSection('keunggulan'); toggleSidebar()"><i class="fas fa-star"></i> Keunggulan</a>
             <a href="#" onclick="showSection('berkelanjutan'); toggleSidebar()"><i class="fas fa-sync-alt"></i> Keberlanjutan</a>
+            <a href="#" onclick="showSection('dokumentasi'); toggleSidebar()"><i class="fas fa-images"></i> Dokumentasi Kegiatan</a>
         </div>
     </div>
 
@@ -737,8 +814,7 @@
                         <li>Kolaborasi dengan masyarakat dan institusi lingkungan, memperkuat dampak inovasi di luar sekolah.</li>
                         <li>Inspirasi bagi sekolah lain untuk menerapkan sistem serupa, memperluas gerakan peduli lingkungan berbasis inovasi.</li>
                     </ul>
-                </li>
-            </ul>
+                </ul>
             <p>Inovasi ini telah membuktikan bahwa biokonversi limbah dapur dengan maggot BSF dapat menjadi solusi yang efektif dan berkelanjutan bagi sekolah dalam mengelola sampah serta mendukung pendidikan berbasis lingkungan.</p>
         </div>
 
@@ -799,8 +875,139 @@
                 <li>Menyusun strategi **pemanfaatan pupuk organik sebagai bagian dari sumber pemasukan** sekolah atau program sosial.</li>
             </ul>
         </div>
+
+        <div id="dokumentasi" class="menu-section">
+            <h3>Dokumentasi Kegiatan</h3>
+
+            <h4>Proses Persiapan</h4>
+            <p>Tahap awal dalam inovasi ini meliputi persiapan lokasi, alat, dan bahan untuk budidaya maggot dan pengolahan limbah.</p>
+            <div class="dokumentasi-grid">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="persiapan_lokasi_besar.jpg" data-caption="Membersihkan dan menyiapkan area budidaya.">
+                    <img src="persiapan_lokasi_kecil.jpg" alt="Persiapan Lokasi">
+                    <div class="dokumentasi-caption">Membersihkan dan menyiapkan area budidaya.</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="persiapan_lokasi_besar1.jpg" data-caption="Penyortiran limbah organik dari kantin sekolah.">
+                    <img src="persiapan_lokasi_kecil1.jpg" alt="Penyortiran Limbah">
+                    <div class="dokumentasi-caption">Pengecetan dan Pengkondisian Ruangan</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="persiapan_lokasi_besar2.jpg" data-caption="Pengadaan bibit maggot BSF berkualitas.">
+                    <img src="persiapan_lokasi_kecil2.jpg" alt="Pengadaan Bibit Maggot">
+                    <div class="dokumentasi-caption">Ruangan Keskretariatan dan Administrasi</div>
+                </div>
+
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="beberes1besar.jpeg" data-caption="Membersihkan dan menyiapkan area budidaya.">
+                    <img src="beberes1kecil.jpeg" alt="Persiapan Lokasi">
+                    <div class="dokumentasi-caption">Membersihkan dan menyiapkan area budidaya Lalat</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="beberes2besar.jpeg" data-caption="Penyortiran limbah organik dari kantin sekolah.">
+                    <img src="beberes2besar.jpeg" alt="Penyortiran Limbah">
+                    <div class="dokumentasi-caption">Membersihkan dan menyiapkan area ruang terbuka</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="beberes3besar.jpeg" data-caption="Pengadaan bibit maggot BSF berkualitas.">
+                    <img src="beberes3besar.jpeg" alt="Pengadaan Bibit Maggot">
+                    <div class="dokumentasi-caption">Pengepelan dan Penyemprotan dari debu</div>
+                </div>
+
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="Bibit_Magot_Besar.jpg" data-caption="Membersihkan dan menyiapkan area budidaya.">
+                    <img src="Bibit_Magot_kecil.jpg" alt="Persiapan Lokasi">
+                    <div class="dokumentasi-caption">Menyiapkan Bibit Maggot</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="kandang_besar.jpeg" data-caption="Penyortiran limbah organik dari kantin sekolah.">
+                    <img src="kandang_kecil.jpeg" alt="Penyortiran Limbah">
+                    <div class="dokumentasi-caption">Menyiapkan Kandang Lalat BSF dan Tempat Lalat Bertelur</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="Menyiapkan_biopon_kecil.jpg" data-caption="Pengadaan bibit maggot BSF berkualitas.">
+                    <img src="Menyiapkan_biopon_kecil.jpg" alt="Pengadaan Bibit Maggot">
+                    <div class="dokumentasi-caption">Membagi Maggot Kedalam 2 Wadah Biopon</div>
+                </div>
+            </div>
+
+            <h4>Proses Budidaya</h4>
+            <p>Proses inti biokonversi di mana maggot BSF mengurai limbah organik.</p>
+            <div class="dokumentasi-grid">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="makan_maggot_besar.jpeg" data-caption="Pemberian pakan limbah pada maggot.">
+                    <img src="makan_maggot_kecil.jpeg" alt="Budidaya Maggot 1">
+                    <div class="dokumentasi-caption">Pemberian pakan limbah Dapur pada maggot.</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="sampah_dapur_besar.jpeg" data-caption="Perawatan rutin dan pemantauan pertumbuhan maggot.">
+                    <img src="sampah_dapur_kecil.jpeg" alt="Budidaya Maggot 2">
+                    <div class="dokumentasi-caption">Pakan Limbah Dapur Campuran Kulit Buah dan Sisa Masakan</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="cek_telur_besar.jpg" data-caption="Panen maggot yang siap digunakan sebagai pakan.">
+                    <img src="cek_telur_kecil.jpg" alt="Panen Maggot BSF">
+                    <div class="dokumentasi-caption">Pengecekan Rutin Telur Lalat BSF</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="pengawasanbesar.jpeg" data-caption="Pemberian pakan limbah pada maggot.">
+                    <img src="pengawasankecil.jpeg" alt="Budidaya Maggot 1">
+                    <div class="dokumentasi-caption">Pengawasan Rutin Kondisi Maggot dan Kandang BSF</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="sisanasibesar.jpeg" data-caption="Perawatan rutin dan pemantauan pertumbuhan maggot.">
+                    <img src="sisanasikecil.jpeg" alt="Budidaya Maggot 2">
+                    <div class="dokumentasi-caption">Setoran Sampah Dapur Sisa Nasi dan Sayuran</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="tutupbesar.jpg" data-caption="Panen maggot yang siap digunakan sebagai pakan.">
+                    <img src="tutupkecil.jpg" alt="Panen Maggot BSF">
+                    <div class="dokumentasi-caption">Penutupan Biopon Menggunakan Ram Kawat Agar Terhindar dari Hama Tikus dan Lalat hijau</div>
+                </div>
+                
+            </div>
+
+            <h4>Proses Pengolahan Kasgot</h4>
+            <p>Mengubah sisa limbah (kasgot) dari budidaya maggot menjadi pupuk organik.</p>
+            <div class="dokumentasi-grid">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="pengeringan_kasgot_besar.jpg" data-caption="Proses pengeringan kasgot sebelum diolah.">
+                    <img src="pengeringan_kasgot_kecil.jpg" alt="Pengeringan Kasgot">
+                    <div class="dokumentasi-caption">Proses pengeringan kasgot sebelum diolah.</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="pengayakan_pupuk_besar.jpg" data-caption="Pengayakan kasgot menjadi pupuk siap pakai.">
+                    <img src="pengayakan_pupuk_kecil.jpg" alt="Pengayakan Pupuk">
+                    <div class="dokumentasi-caption">Pengayakan kasgot menjadi pupuk siap pakai.</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="pupuk_organik_jadi_besar.jpg" data-caption="Hasil akhir pupuk organik dari kasgot.">
+                    <img src="pupuk_organik_jadi_kecil.jpg" alt="Pupuk Organik Jadi">
+                    <div class="dokumentasi-caption">Hasil akhir pupuk organik dari kasgot.</div>
+                </div>
+            </div>
+
+            <h4>Proses Pengemasan</h4>
+            <p>Pengemasan pupuk organik hasil biokonversi untuk distribusi dan pemanfaatan.</p>
+            <div class="dokumentasi-grid">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="pengemasan_pupuk_1_besar.jpg" data-caption="Pengemasan pupuk organik ke dalam karung/kemasan.">
+                    <img src="pengemasan_pupuk_1_kecil.jpg" alt="Pengemasan Pupuk 1">
+                    <div class="dokumentasi-caption">Pengemasan pupuk organik ke dalam karung/kemasan.</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="pelabelan_produk_besar.jpg" data-caption="Pemberian label pada kemasan pupuk.">
+                    <img src="pelabelan_produk_kecil.jpg" alt="Pelabelan Produk">
+                    <div class="dokumentasi-caption">Pemberian label pada kemasan pupuk.</div>
+                </div>
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="siap_distribusi_besar.jpg" data-caption="Pupuk organik siap didistribusikan dan digunakan.">
+                    <img src="siap_distribusi_kecil.jpg" alt="Siap Distribusi">
+                    <div class="dokumentasi-caption">Pupuk organik siap didistribusikan dan digunakan.</div>
+                </div>
+            </div>
+
+            <p>Kami akan terus memperbarui bagian ini dengan foto dan video kegiatan terbaru.</p>
+        </div>
+
     </div>
 
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    </div>
+                <div class="modal-footer border-0 pt-0">
+                    <span id="modalCaption" class="text-white"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         window.onload = () => {
             const splashImg = document.querySelector('#splash img');
@@ -826,6 +1033,47 @@
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('active');
         }
+
+        // Script untuk Modal Gambar
+        document.addEventListener('DOMContentLoaded', function () {
+            const imageModal = document.getElementById('imageModal');
+            imageModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget; // Tombol (dokumentasi-item) yang memicu modal
+                const modalBody = imageModal.querySelector('.modal-body');
+                const modalCaption = imageModal.querySelector('#modalCaption');
+
+                modalBody.innerHTML = ''; // Kosongkan konten modal sebelumnya
+
+                const imgSrc = button.getAttribute('data-img-src');
+                const videoSrc = button.getAttribute('data-video-src');
+                const caption = button.getAttribute('data-caption');
+
+                if (imgSrc) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imgSrc;
+                    imgElement.alt = caption;
+                    modalBody.appendChild(imgElement);
+                } else if (videoSrc) {
+                    const videoElement = document.createElement('video');
+                    videoElement.src = videoSrc;
+                    videoElement.controls = true; // Tambahkan kontrol video
+                    videoElement.autoplay = true; // Auto-play video di modal
+                    videoElement.loop = true; // Loop video
+                    modalBody.appendChild(videoElement);
+                }
+
+                modalCaption.textContent = caption;
+            });
+
+            // Menghentikan video saat modal ditutup
+            imageModal.addEventListener('hidden.bs.modal', function () {
+                const videoElement = imageModal.querySelector('.modal-body video');
+                if (videoElement) {
+                    videoElement.pause();
+                    videoElement.currentTime = 0; // Reset video ke awal
+                }
+            });
+        });
     </script>
 </body>
 
