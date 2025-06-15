@@ -373,6 +373,180 @@
                 grid-template-columns: 1fr;
             }
         }
+
+/*        Dasar hukum*/
+        .regulasi-card-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .regulasi-card {
+            background-color: #e8f5e9;
+            border-left: 6px solid #4caf50;
+            border-radius: 10px;
+            padding: 15px 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .regulasi-card i {
+            font-size: 1.8rem;
+            color: #388e3c;
+        }   
+
+        .masalah-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .masalah-card {
+            background-color: #fff3e0;
+            border-left: 6px solid #f57c00;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            font-size: 1.05rem;
+        }
+
+        .masalah-card h5 {
+            color: #d84315;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .inovasi-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 20px;
+          margin-top: 20px;
+        }
+
+        .inovasi-card {
+          background-color: #e3f2fd;
+          border-left: 6px solid #2196f3;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+          font-size: 1.05rem;
+        }
+
+        .inovasi-card h5 {
+          color: #0d47a1;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .inovasi-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 20px;
+          margin-top: 20px;
+        }
+
+        .inovasi-card {
+          background-color: #fff8e1;
+          border-left: 6px solid #ffb300;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+          font-size: 1.05rem;
+        }
+
+        .inovasi-card h5 {
+          color: #ef6c00;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .inovasi-card:nth-child(odd) {
+          background-color: #f1f8e9;
+          border-left-color: #8bc34a;
+        }
+
+        .inovasi-card:nth-child(even) {
+          background-color: #e8f5e9;
+          border-left-color: #43a047;
+        }
+
+        .tahapan-langkah {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          margin-top: 20px;
+        }
+
+        .step-card {
+          background-color: #fffde7;
+          border-left: 6px solid #fbc02d;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+          font-size: 1.05rem;
+        }
+
+        .step-card h5 {
+          color: #f57f17;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .footer-lestari {
+          text-align: center;
+          padding: 15px 10px;
+          background-color: #f1f8e9;
+          color: #388e3c;
+          font-weight: 500;
+          font-size: 1rem;
+          border-top: 2px solid #c5e1a5;
+          margin-top: 40px;
+        }
+
+        .timeline-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+          margin-top: 20px;
+        }
+
+        .timeline-card {
+          background-color: #e8f5e9;
+          border-left: 5px solid #43a047;
+          border-radius: 10px;
+          padding: 15px 20px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+          font-size: 1rem;
+        }
+
+        .timeline-card h4 {
+          color: #2e7d32;
+          margin-bottom: 5px;
+        }
+
+        .timeline-card strong {
+          color: #1b5e20;
+        }
+
+        .total-card {
+          background-color: #c8e6c9;
+          border-left-color: #1b5e20;
+        }   
+
+
     </style>
 </head>
 
@@ -400,6 +574,7 @@
             <a href="#" onclick="showSection('keunggulan'); toggleSidebar()"><i class="fas fa-star"></i> Keunggulan</a>
             <a href="#" onclick="showSection('berkelanjutan'); toggleSidebar()"><i class="fas fa-sync-alt"></i> Keberlanjutan</a>
             <a href="#" onclick="showSection('dokumentasi'); toggleSidebar()"><i class="fas fa-images"></i> Dokumentasi Kegiatan</a>
+            <a href="#" onclick="showSection('statistik'); toggleSidebar()"><i class="fas fa-chart-bar"></i> Data Statistik</a>
         </div>
     </div>
 
@@ -433,448 +608,336 @@
         </div>
 
         <div id="dasar" class="menu-section">
-            <h3>Dasar Hukum</h3>
-            <ul>
-                <li><span class="highlight-regulasi">Peraturan Menteri Lingkungan Hidup dan Kehutanan Nomor 52 Tahun 2019</span> tentang Gerakan Peduli dan Berbudaya Lingkungan Hidup di Sekolah.</li>
-                <li><span class="highlight-regulasi">Peraturan Gubernur Jawa Barat Nomor 4 Tahun 2020</span> tentang Pedoman Pelaksanaan Penegakan Hukum Lingkungan Hidup.</li>
-                <li><span class="highlight-regulasi">Undang-Undang No. 18 Tahun 2008</span> tentang Pengelolaan Sampah, yang mendorong pengelolaan limbah berbasis pemanfaatan.</li>
-                <li><span class="highlight-regulasi">Peraturan Bupati (Perbup) Kabupaten Bandung Barat Nomor 16 Tahun 2019</span> tentang Kebijakan dan Strategi Daerah dalam Pengelolaan Sampah Rumah Tangga dan Sampah Sejenis Sampah Rumah Tangga Tahun 2019-2025.</li>
-                <li><span class="highlight-regulasi">Program ADIWIYATA SMAN 2 Padalarang</span>, yang bertujuan meningkatkan kesadaran lingkungan di sekolah melalui Gerakan PBLHS.</li>
-            </ul>
+        <h3>Dasar Hukum Inovasi</h3>
+
+            <div class="regulasi-card-list">
+                <div class="regulasi-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <div>
+                        <strong>Permen LHK No. 52 Tahun 2019</strong><br>
+                        Gerakan Peduli & Berbudaya Lingkungan Hidup di Sekolah
+                    </div>
+                </div>
+
+                <div class="regulasi-card">
+                    <i class="fas fa-landmark"></i>
+                    <div>
+                        <strong>Peraturan Gubernur Jabar No. 4 Tahun 2020</strong><br>
+                        Pedoman Penegakan Hukum Lingkungan Hidup
+                    </div>
+                </div>
+
+                <div class="regulasi-card">
+                    <i class="fas fa-recycle"></i>
+                    <div>
+                        <strong>UU No. 18 Tahun 2008</strong><br>
+                        Pengelolaan Sampah Berbasis Pemanfaatan
+                    </div>
+                </div>
+
+                <div class="regulasi-card">
+                    <i class="fas fa-file-signature"></i>
+                    <div>
+                        <strong>Perbup KBB No. 16 Tahun 2019</strong><br>
+                        Strategi Pengelolaan Sampah Rumah Tangga 2019–2025
+                    </div>
+                </div>
+
+                <div class="regulasi-card">
+                    <i class="fas fa-school"></i>
+                    <div>
+                        <strong>Program Adiwiyata SMAN 2 Padalarang</strong><br>
+                        Meningkatkan Kesadaran Lingkungan di Sekolah
+                    </div>
+                </div>
+            </div>
         </div>
+
 
         <div id="masalah" class="menu-section">
-            <h3>Hal-Hal Yang Menyebabkan Timbulnya Permasalahan</h3>
-            <div class="sub-subjudul">Permasalahan Makro</div>
-            <ul>
-                <li><span class="highlight-regulasi">Tingginya volume sampah organik</span> yang tidak terkelola dengan baik, berkontribusi pada pencemaran lingkungan.</li>
-                <li><span class="highlight-regulasi">Kurangnya kesadaran masyarakat</span> terhadap ekonomi sirkular dan pemanfaatan limbah sebagai sumber daya.</li>
-            </ul>
-            <div class="sub-subjudul">Permasalahan Mikro</div>
-            <ul>
-                <li><span class="highlight-regulasi">Limbah dapur sekolah</span> tidak memiliki sistem pengolahan yang efisien, sering kali hanya dibuang begitu saja.</li>
-                <li><span class="highlight-regulasi">Minimnya edukasi siswa</span> terkait biokonversi dan potensi penggunaan maggot BSF dalam pengelolaan limbah.</li>
-                <li><span class="highlight-regulasi">Kurangnya kesadaran warga sekolah</span> dalam memilah sampah.</li>
-            </ul>
+        <h3>Permasalahan: Limbah Organik & Kesadaran Lingkungan</h3>
+
+        <div class="masalah-grid">
+            <div class="masalah-card">
+                <h5><i class="fas fa-exclamation-circle"></i> Permasalahan Makro</h5>
+                <ul>
+                    <li><strong>Tingginya volume sampah organik</strong> yang tidak dikelola dengan baik.</li>
+                    <li><strong>Rendahnya kesadaran masyarakat</strong> tentang ekonomi sirkular & pemanfaatan limbah.</li>
+                </ul>
+            </div>
+
+            <div class="masalah-card">
+                <h5><i class="fas fa-exclamation-triangle"></i> Permasalahan Mikro</h5>
+                <ul>
+                    <li><strong>Limbah dapur sekolah</strong> belum memiliki sistem pengolahan efisien.</li>
+                    <li><strong>Kurangnya edukasi siswa</strong> terkait biokonversi dan pemanfaatan maggot BSF.</li>
+                    <li><strong>Kesadaran memilah sampah</strong> di lingkungan sekolah masih minim.</li>
+                </ul>
+            </div>
         </div>
+    </div>
+
 
         <div id="tahapan" class="menu-section">
-            <h3 class="mb-4">Tahapan Pelaksanaan Inovasi</h3>
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped align-middle" style="background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <thead class="table-success text-center">
-                        <tr>
-                            <th style="width: 20%;">Tahapan</th>
-                            <th>Upaya yang Dilakukan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>1. Perencanaan</strong></td>
-                            <td>
-                                <ul>
-                                    <li>Identifikasi masalah pengelolaan limbah dapur di sekolah.</li>
-                                    <li>Studi literatur tentang biokonversi dengan maggot BSF.</li>
-                                    <li>Penyusunan proposal dan desain proyek.</li>
-                                    <li>Koordinasi dengan guru pembimbing dan pihak sekolah.</li>
-                                    <li>Pengajuan anggaran dan pencarian sumber pendanaan.</li>
-                                    <li>Penyusunan strategi keberlanjutan proyek.</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>2. Pelaksanaan</strong></td>
-                            <td>
-                                <ul>
-                                    <li>Pengadaan wadah budidaya maggot dan alat pengolahan.</li>
-                                    <li>Pembentukan tim siswa yang bertanggung jawab atas berbagai aspek proyek.</li>
-                                    <li>Pelatihan budidaya maggot dan pengolahan limbah organik.</li>
-                                    <li>Sosialisasi program kepada siswa lain dan staf sekolah.</li>
-                                    <li>Pengumpulan dan pemilahan limbah dapur dari kantin serta rumah tangga siswa.</li>
-                                    <li>Proses budidaya maggot hingga produksi pupuk organik.</li>
-                                    <li>Penerapan pupuk di kebun sekolah dan evaluasi hasilnya.</li>
-                                    <li>Dokumentasi dan publikasi program melalui video kampanye serta laporan tertulis.</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>3. Pembaharuan Keberlanjutan</strong></td>
-                            <td>
-                                <ul>
-                                    <li>Evaluasi efektivitas metode biokonversi yang digunakan.</li>
-                                    <li>Optimalisasi teknik budidaya maggot untuk meningkatkan produktivitas.</li>
-                                    <li>Pengembangan sistem pemantauan dan pencatatan dampak lingkungan.</li>
-                                    <li>Integrasi program dalam kurikulum pendidikan lingkungan sekolah.</li>
-                                    <li>Kolaborasi dengan komunitas dan pihak eksternal untuk ekspansi program.</li>
-                                    <li>Mencari dukungan lebih luas agar inovasi ini terus berlanjut dan berkembang.</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+          <h3>Tahapan Pelaksanaan Inovasi</h3>
+
+          <div class="tahapan-langkah">
+            <div class="step-card">
+              <h5><i class="fas fa-pencil-alt"></i> 1. Perencanaan</h5>
+              <ul>
+                <li>Identifikasi masalah pengelolaan limbah dapur</li>
+                <li>Studi literatur biokonversi & desain proyek</li>
+                <li>Koordinasi dengan guru dan sekolah</li>
+                <li>Pengajuan anggaran & strategi keberlanjutan</li>
+              </ul>
             </div>
+
+            <div class="step-card">
+              <h5><i class="fas fa-hammer"></i> 2. Pelaksanaan</h5>
+              <ul>
+                <li>Pengadaan alat & pembentukan tim siswa</li>
+                <li>Pelatihan budidaya maggot & sosialisasi program</li>
+                <li>Pengumpulan limbah & proses biokonversi</li>
+                <li>Produksi pupuk & aplikasi di kebun sekolah</li>
+                <li>Dokumentasi & publikasi inovasi</li>
+              </ul>
+            </div>
+
+            <div class="step-card">
+              <h5><i class="fas fa-leaf"></i> 3. Keberlanjutan</h5>
+              <ul>
+                <li>Evaluasi efektivitas dan dampak inovasi</li>
+                <li>Pengembangan teknik & sistem monitoring</li>
+                <li>Integrasi kurikulum & kolaborasi eksternal</li>
+                <li>Ekspansi program ke sekolah lain</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
 
         <div id="timeline" class="menu-section">
-            <h3>Timeline Inovasi Biokonversi Limbah Dapur dengan Maggot BSF</h3>
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped align-middle" style="background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <thead class="table-success text-center">
-                        <tr>
-                            <th style="width: 15%;">Tahapan</th>
-                            <th style="width: 15%;">Waktu</th>
-                            <th>Kegiatan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Perencanaan</strong></td>
-                            <td>Maret 2025</td>
-                            <td>
-                                <ul>
-                                    <li>Identifikasi masalah limbah dapur di sekolah.</li>
-                                    <li>Studi literatur tentang biokonversi dengan maggot.</li>
-                                    <li>Penyusunan proposal inovasi.</li>
-                                    <li>Koordinasi dengan guru pembimbing & sekolah.</li>
-                                    <li>Pengajuan anggaran proyek.</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>Persiapan</strong></td>
-                            <td>Awal April 2025</td>
-                            <td>
-                                <ul>
-                                    <li>Pengadaan wadah budidaya maggot & peralatan pengolahan limbah.</li>
-                                    <li>Pembentukan tim kerja siswa.</li>
-                                    <li>Pelatihan teknik budidaya maggot & pengolahan limbah.</li>
-                                    <li>Sosialisasi program kepada siswa dan staf sekolah.</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>Pelaksanaan</strong></td>
-                            <td>April - Mei 2025</td>
-                            <td>
-                                <ul>
-                                    <li>Pengumpulan limbah dapur dari kantin dan rumah tangga siswa.</li>
-                                    <li>Budidaya maggot BSF dalam wadah khusus.</li>
-                                    <li>Produksi pupuk organik dari hasil biokonversi **dan Pengemasan**.</li>
-                                    <li>Edukasi & dokumentasi program melalui video kampanye.</li>
-                                    <li>Evaluasi dan penyempurnaan metode biokonversi.</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+          <h3>Timeline Inovasi Biokonversi (2025)</h3>
 
-            <h4 class="mt-5 mb-3">Sumber Daya Manusia</h4>
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped align-middle" style="background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <thead class="table-success text-center">
-                        <tr>
-                            <th style="width: 30%;">Tim yang Terlibat</th>
-                            <th>Peran</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Tim Siswa Gerakan Lestari</strong></td>
-                            <td>Pelaksana utama dalam pengelolaan limbah dan budidaya maggot.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Guru Pembimbing</strong></td>
-                            <td>Memberikan arahan dan supervisi program.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Ahli Lingkungan/Pembudidaya Maggot</strong></td>
-                            <td>Konsultan eksternal jika diperlukan.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Relawan Sekolah dan 3G</strong></td>
-                            <td>Membantu dalam pengumpulan dan pemilahan limbah dapur.</td>
-                        </tr>
-                    </tbody>
-                </table>
+          <div class="timeline-grid">
+            <div class="timeline-card">
+              <h4>Perencanaan</h4>
+              <p><strong>Maret 2025</strong></p>
+              <ul>
+                <li>Identifikasi masalah limbah dapur di sekolah</li>
+                <li>Studi literatur biokonversi maggot</li>
+                <li>Penyusunan proposal & pengajuan anggaran</li>
+                <li>Koordinasi guru & sekolah</li>
+              </ul>
             </div>
+            <div class="timeline-card">
+              <h4>Persiapan</h4>
+              <p><strong>Awal April 2025</strong></p>
+              <ul>
+                <li>Pengadaan wadah maggot & alat pengolahan</li>
+                <li>Pembentukan tim kerja siswa</li>
+                <li>Pelatihan & sosialisasi internal</li>
+              </ul>
+            </div>
+            <div class="timeline-card">
+              <h4>Pelaksanaan</h4>
+              <p><strong>April–Mei 2025</strong></p>
+              <ul>
+                <li>Pengumpulan limbah & budidaya maggot</li>
+                <li>Produksi dan pengemasan pupuk</li>
+                <li>Edukasi & dokumentasi program</li>
+                <li>Evaluasi & penyempurnaan metode</li>
+              </ul>
+            </div>
+          </div>
 
-            <h4 class="mt-5 mb-3">Prasarana yang Digunakan</h4>
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped align-middle" style="background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <thead class="table-success text-center">
-                        <tr>
-                            <th style="width: 30%;">Jenis Prasarana</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Wadah Budidaya Maggot</strong></td>
-                            <td>Bak / kotak budidaya, Rak penyimpanan.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Peralatan Pengolahan Limbah</strong></td>
-                            <td>Baskom lubang untuk menyaring sampah, ember/wadah fermentasi, Copper Sampah Organik.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Tempat Penyimpanan Pupuk</strong></td>
-                            <td>Karung atau drum.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Alat Dokumentasi</strong></td>
-                            <td>Kamera, komputer untuk video editing.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Area Uji Coba</strong></td>
-                            <td>Ruang Inovasi/Ruang Daur Ulang/Ruang Komposter dan Kebun sekolah untuk penerapan pupuk.</td>
-                        </tr>
-                    </tbody>
-                </table>
+          <h4 class="mt-5">Sumber Daya Manusia</h4>
+          <div class="timeline-grid">
+            <div class="timeline-card">
+              <strong>Tim Siswa Gerakan Lestari</strong>
+              <p>Pelaksana utama kegiatan</p>
             </div>
+            <div class="timeline-card">
+              <strong>Guru Pembimbing</strong>
+              <p>Pembina & pengarah teknis program</p>
+            </div>
+            <div class="timeline-card">
+              <strong>Ahli Lingkungan / Pembudidaya</strong>
+              <p>Konsultan eksternal (jika diperlukan)</p>
+            </div>
+            <div class="timeline-card">
+              <strong>Relawan Sekolah & 3G</strong>
+              <p>Tim bantu pemilahan & dokumentasi</p>
+            </div>
+          </div>
 
-            <h4 class="mt-5 mb-3">Anggaran yang Digunakan</h4>
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped align-middle" style="background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <thead class="table-success text-center">
-                        <tr>
-                            <th style="width: 50%;">Komponen</th>
-                            <th style="width: 50%;">Perkiraan Biaya (Rp)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Wadah budidaya maggot dan Rak Wadah Maggot</strong></td>
-                            <td>1.000.000</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Peralatan pengolahan limbah</strong></td>
-                            <td>2.000.000</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Pelatihan dan edukasi</strong></td>
-                            <td>1.500.000</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dokumentasi dan kampanye</strong></td>
-                            <td>1.000.000</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Biaya lain-lain</strong></td>
-                            <td>1.000.000</td>
-                        </tr>
-                        <tr class="table-info">
-                            <td><strong>Total Perkiraan Anggaran</strong></td>
-                            <td><strong>6.000.000</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
+          <h4 class="mt-5">Prasarana Program</h4>
+          <div class="timeline-grid">
+            <div class="timeline-card">
+              <strong>Wadah Budidaya</strong>
+              <p>Bak budidaya, rak penyimpanan maggot</p>
             </div>
+            <div class="timeline-card">
+              <strong>Peralatan Limbah</strong>
+              <p>Baskom lubang, ember fermentasi, copper organik</p>
+            </div>
+            <div class="timeline-card">
+              <strong>Dokumentasi</strong>
+              <p>Kamera, komputer, video editing</p>
+            </div>
+            <div class="timeline-card">
+              <strong>Area Uji Coba</strong>
+              <p>Kebun sekolah & ruang inovasi</p>
+            </div>
+          </div>
+
+          <h4 class="mt-5">Anggaran Program (Rp)</h4>
+          <div class="timeline-grid">
+            <div class="timeline-card">
+              <strong>Wadah & Rak Maggot</strong>
+              <p>Rp1.000.000</p>
+            </div>
+            <div class="timeline-card">
+              <strong>Peralatan Pengolahan</strong>
+              <p>Rp2.000.000</p>
+            </div>
+            <div class="timeline-card">
+              <strong>Pelatihan & Edukasi</strong>
+              <p>Rp1.500.000</p>
+            </div>
+            <div class="timeline-card">
+              <strong>Dokumentasi & Kampanye</strong>
+              <p>Rp1.000.000</p>
+            </div>
+            <div class="timeline-card">
+              <strong>Lain-lain</strong>
+              <p>Rp1.000.000</p>
+            </div>
+            <div class="timeline-card total-card">
+              <strong>Total</strong>
+              <p><strong>Rp6.000.000</strong></p>
+            </div>
+          </div>
         </div>
+
 
         <div id="manfaat" class="menu-section">
-            <h3>Tujuan, Manfaat, Dampak dan Hasil Inovasi</h3>
+          <h3>Tujuan, Manfaat, Dampak & Hasil Inovasi</h3>
+          <div class="inovasi-grid">
 
-            <div class="sub-subjudul">a. Tujuan</div>
-            <p>Inovasi biokonversi limbah dapur dengan maggot BSF di ADIWIYATA SMA Negeri 2 Padalarang bertujuan untuk menciptakan sistem pengelolaan limbah yang berkelanjutan serta memberikan manfaat ekologis, edukatif, dan ekonomi. Tujuan utama program ini adalah:</p>
-            <ul>
-                <li><strong>Pengelolaan Limbah Ramah Lingkungan:</strong>
-                    <ul>
-                        <li>Mengurangi volume limbah organik yang dihasilkan sekolah secara efisien dan berkelanjutan.</li>
-                        <li>Mencegah pencemaran lingkungan akibat pembuangan sampah yang tidak terkelola dengan baik.</li>
-                        <li>Meningkatkan kesadaran ekologi di kalangan siswa dan staf sekolah mengenai pentingnya daur ulang dan ekonomi sirkular.</li>
-                    </ul>
-                </li>
-                <li><strong>Produksi Pupuk Organik Berkualitas:</strong>
-                    <ul>
-                        <li>Menghasilkan pupuk organik kaya nutrisi dari proses biokonversi yang dapat digunakan dalam penghijauan sekolah atau pertanian lokal.</li>
-                        <li>Mengembangkan alternatif pupuk alami sebagai solusi bagi petani dan komunitas sekitar.</li>
-                    </ul>
-                </li>
-                <li><strong>Edukasi dan Penerapan Ilmu Pengetahuan:</strong>
-                    <ul>
-                        <li>Mempraktikkan konsep biologi dan ekologi dalam kehidupan nyata melalui proyek berbasis lingkungan.</li>
-                        <li>Meningkatkan keterampilan siswa dalam penelitian, kewirausahaan, dan manajemen proyek lingkungan.</li>
-                        <li>Mengintegrasikan inovasi ini ke dalam kurikulum, sehingga siswa memahami konsep keberlanjutan secara lebih mendalam.</li>
-                    </ul>
-                </li>
-                <li><strong>Pengembangan Kewirausahaan dan Ekonomi Sirkular:</strong>
-                    <ul>
-                        <li>Memanfaatkan hasil biokonversi sebagai produk bernilai ekonomi, seperti pupuk organik dan maggot untuk pakan ternak.</li>
-                        <li>Mendorong siswa untuk mengembangkan ide bisnis berbasis lingkungan, menciptakan inovasi yang dapat berkontribusi pada ekonomi hijau.</li>
-                        <li>Menjalin kolaborasi dengan komunitas dan industri untuk memperluas manfaat program.</li>
-                    </ul>
-                </li>
-                <li><strong>Keberlanjutan dan Replikasi Program:</strong>
-                    <ul>
-                        <li>Membangun sistem yang mudah diterapkan di sekolah lain, sehingga inovasi ini dapat menyebar lebih luas.</li>
-                        <li>Melibatkan masyarakat, dinas lingkungan, dan universitas dalam pengembangan program agar semakin optimal.</li>
-                        <li>Menggunakan teknologi untuk meningkatkan efisiensi biokonversi, seperti sensor lingkungan dan otomatisasi sistem.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>Dengan tujuan yang jelas ini, inovasi biokonversi limbah dapur dengan maggot BSF tidak hanya berdampak pada sekolah, tetapi juga berkontribusi dalam membangun ekosistem hijau yang lebih luas.</p>
+            <div class="inovasi-card">
+              <h5><i class="fas fa-bullseye"></i> Tujuan</h5>
+              <ul>
+                <li>Kelola limbah dapur secara ramah lingkungan & berkelanjutan</li>
+                <li>Hasilkan pupuk & pakan dari biokonversi maggot BSF</li>
+                <li>Terapkan ilmu pengetahuan ke dalam aksi nyata</li>
+                <li>Kembangkan kewirausahaan hijau & replikasi antar sekolah</li>
+              </ul>
+            </div>
 
-            <div class="sub-subjudul">b. Manfaat</div>
-            <p>Implementasi inovasi biokonversi limbah dapur dengan maggot BSF di ADIWIYATA SMA Negeri 2 Padalarang memberikan berbagai manfaat yang mencakup aspek lingkungan, ekonomi, edukasi, dan sosial. Berikut manfaat utama dari program ini:</p>
-            <ul>
-                <li><strong>Manfaat Lingkungan:</strong>
-                    <ul>
-                        <li>Mengurangi Sampah Organik: Dengan mengolah limbah dapur menjadi pupuk organik, program ini membantu mengurangi volume sampah yang berakhir di tempat pembuangan akhir.</li>
-                        <li>Menekan Emisi Gas Rumah Kaca: Menghindari pembusukan limbah yang dapat menghasilkan gas metana, sehingga berkontribusi pada mitigasi perubahan iklim.</li>
-                        <li>Mendukung Konservasi Tanah: Pupuk organik hasil biokonversi meningkatkan kesuburan tanah tanpa merusak ekosistem seperti halnya pupuk kimia.</li>
-                        <li>Membantu Keanekaragaman Hayati: Maggot BSF sebagai agen dekomposer mendukung keseimbangan ekologi alami.</li>
-                    </ul>
-                </li>
-                <li><strong>Manfaat Ekonomi:</strong>
-                    <ul>
-                        <li>Menghasilkan Pupuk Organik Berkualitas: Produk pupuk hasil biokonversi dapat dimanfaatkan untuk pertanian sekolah atau dijual sebagai sumber pendapatan tambahan.</li>
-                        <li>Membuka Peluang Wirausaha bagi Siswa: Siswa dapat belajar mengelola bisnis berbasis lingkungan dengan menjual pupuk dan maggot untuk pakan ternak.</li>
-                        <li>Mengurangi Biaya Pengelolaan Sampah: Mengoptimalkan pemanfaatan limbah mengurangi biaya pembuangan dan pengolahan sampah konvensional.</li>
-                    </ul>
-                </li>
-                <li><strong>Manfaat Edukasi dan Sosial:</strong>
-                    <ul>
-                        <li>Meningkatkan Kesadaran Lingkungan: Siswa memahami pentingnya keberlanjutan dan konsep ekonomi sirkular melalui pengalaman langsung.</li>
-                        <li>Menjadi Media Pembelajaran Interaktif: Proyek ini bisa menjadi bagian dari kurikulum dalam bidang biologi, kewirausahaan, dan pendidikan lingkungan.</li>
-                        <li>Melatih Keterampilan Ilmiah dan Teknologi: Siswa berkesempatan untuk meneliti proses biokonversi dan memanfaatkan teknologi untuk meningkatkan efisiensi.</li>
-                        <li>Meningkatkan Kolaborasi Sekolah dan Masyarakat: Program ini membuka peluang kerja sama dengan petani, komunitas, dan institusi lingkungan.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>Dengan berbagai manfaat ini, ADIWIYATA SMA Negeri 2 Padalarang bukan hanya menerapkan inovasi hijau, tetapi juga membangun generasi yang lebih peduli terhadap lingkungan dan ekonomi berkelanjutan.</p>
+            <div class="inovasi-card">
+              <h5><i class="fas fa-seedling"></i> Manfaat</h5>
+              <ul>
+                <li><strong>Lingkungan:</strong> Sampah berkurang >50%, tanah subur, emisi berkurang</li>
+                <li><strong>Ekonomi:</strong> Produk bernilai jual, hemat biaya pembuangan</li>
+                <li><strong>Edukasi:</strong> Siswa belajar, meneliti, dan mengelola proyek</li>
+                <li><strong>Sosial:</strong> Kolaborasi sekolah, komunitas & masyarakat</li>
+              </ul>
+            </div>
 
-            <div class="sub-subjudul">c. Dampak</div>
-            <p>Inovasi biokonversi limbah dapur dengan maggot BSF yang dilakukan oleh siswa dalam Gerakan Lestari SMA Negeri 2 Padalarang memiliki berbagai dampak positif, baik dari segi lingkungan, edukasi, sosial, maupun ekonomi. Berikut beberapa dampak utama yang bisa dihasilkan dari proyek ini:</p>
-            <ul>
-                <li><strong>Dampak Lingkungan:</strong>
-                    <ul>
-                        <li>Pengurangan volume sampah organik, sehingga mengurangi beban tempat pembuangan akhir.</li>
-                        <li>Peningkatan kualitas tanah melalui penggunaan pupuk organik hasil biokonversi.</li>
-                        <li>Mengurangi pencemaran lingkungan dan dampak negatif limbah terhadap ekosistem sekolah dan sekitarnya.</li>
-                        <li>Kontribusi terhadap mitigasi gas rumah kaca dengan mengurangi pembusukan limbah organik secara konvensional.</li>
-                    </ul>
-                </li>
-                <li><strong>Dampak Edukasi:</strong>
-                    <ul>
-                        <li>Meningkatnya kesadaran dan keterampilan siswa dalam pengelolaan limbah berkelanjutan.</li>
-                        <li>Memperkenalkan konsep ekonomi sirkular, di mana limbah dapat dikonversi menjadi sumber daya bermanfaat.</li>
-                        <li>Memberikan pengalaman langsung dalam menerapkan metode ilmiah, dari pengamatan hingga analisis dampak.</li>
-                        <li>Mengembangkan keterampilan berpikir kritis dan inovasi, mendorong siswa untuk mencari solusi lingkungan berbasis teknologi.</li>
-                    </ul>
-                </li>
-                <li><strong>Dampak Sosial:</strong>
-                    <ul>
-                        <li>Membentuk budaya sadar lingkungan di sekolah, mendorong lebih banyak siswa untuk berkontribusi dalam gerakan hijau.</li>
-                        <li>Memotivasi komunitas sekolah dan masyarakat sekitar untuk menerapkan sistem pengelolaan limbah serupa.</li>
-                        <li>Membangun kolaborasi antara siswa, guru, dan pihak eksternal seperti komunitas lingkungan atau pemerintah daerah.</li>
-                        <li>Menginspirasi sekolah lain untuk mengembangkan program inovatif berbasis lingkungan.</li>
-                    </ul>
-                </li>
-                <li><strong>Dampak Ekonomi:</strong>
-                    <ul>
-                        <li>Potensi pemanfaatan pupuk organik sebagai produk yang bernilai ekonomi.</li>
-                        <li>Mengurangi biaya operasional sekolah dalam pengelolaan sampah dan pemeliharaan kebun sekolah.</li>
-                        <li>Membuka peluang bagi siswa untuk mengembangkan keterampilan wirausaha berbasis lingkungan.</li>
-                        <li>Mengoptimalkan pemanfaatan limbah sebagai sumber daya produktif, sehingga mengurangi kebutuhan produk kimia pertanian.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>Dengan berbagai dampak ini, inovasi tidak hanya menjadi solusi bagi pengelolaan limbah tetapi juga memperkuat pendidikan lingkungan, meningkatkan keterlibatan sosial, dan menciptakan peluang ekonomi baru.</p>
+            <div class="inovasi-card">
+              <h5><i class="fas fa-bolt"></i> Dampak</h5>
+              <ul>
+                <li>Lingkungan sekolah lebih bersih & sehat</li>
+                <li>Terbentuk budaya sadar lingkungan & ekonomi sirkular</li>
+                <li>Siswa lebih kritis, aktif, dan inovatif</li>
+                <li>Ekosistem hijau tumbuh di luar sekolah</li>
+              </ul>
+            </div>
 
-            <div class="sub-subjudul">d. Hasil Inovasi</div>
-            <p>Implementasi inovasi biokonversi limbah dapur menggunakan maggot BSF di ADIWIYATA SMA Negeri 2 Padalarang telah menghasilkan berbagai dampak nyata yang mencerminkan keberhasilan program ini. Berikut adalah hasil utama yang telah dicapai:</p>
-            <ul>
-                <li><strong>Pengurangan Limbah Organik:</strong>
-                    <ul>
-                        <li>Volume sampah dapur berkurang hingga lebih dari 50% melalui konversi menjadi pupuk organik.</li>
-                        <li>Pengurangan sampah yang berakhir di tempat pembuangan akhir, membantu mengurangi pencemaran lingkungan.</li>
-                    </ul>
-                </li>
-                <li><strong>Produksi Pupuk Organik Berkualitas:</strong>
-                    <ul>
-                        <li>Terbentuknya pupuk organik dari proses biokonversi, kaya akan nutrisi bagi tanaman dan cocok digunakan dalam pertanian sekolah.</li>
-                        <li>Peningkatan kesuburan tanah di area penghijauan sekolah, menghasilkan tanaman yang lebih sehat dan produktif.</li>
-                    </ul>
-                </li>
-                <li><strong>Pemanfaatan Maggot sebagai Produk Bernilai Ekonomi:</strong>
-                    <ul>
-                        <li>Panen maggot BSF secara berkala, dapat digunakan sebagai pakan ternak yang kaya protein.</li>
-                        <li>Potensi pengembangan kewirausahaan siswa, dengan menjual pupuk organik atau maggot kepada petani dan peternak lokal.</li>
-                    </ul>
-                </li>
-                <li><strong>Peningkatan Kesadaran dan Edukasi Siswa:</strong>
-                    <ul>
-                        <li>Integrasi program ini dalam kurikulum sekolah, sehingga siswa dapat memahami langsung konsep ekonomi sirkular dan keberlanjutan.</li>
-                        <li>Peningkatan keterlibatan siswa dalam riset dan proyek lingkungan, menjadikan mereka lebih peduli terhadap ekosistem dan pengelolaan sampah.</li>
-                    </ul>
-                </li>
-                <li><strong>Dukungan dan Pengembangan Komunitas:</strong>
-                    <ul>
-                        <li>Kolaborasi dengan masyarakat dan institusi lingkungan, memperkuat dampak inovasi di luar sekolah.</li>
-                        <li>Inspirasi bagi sekolah lain untuk menerapkan sistem serupa, memperluas gerakan peduli lingkungan berbasis inovasi.</li>
-                    </ul>
-                </ul>
-            <p>Inovasi ini telah membuktikan bahwa biokonversi limbah dapur dengan maggot BSF dapat menjadi solusi yang efektif dan berkelanjutan bagi sekolah dalam mengelola sampah serta mendukung pendidikan berbasis lingkungan.</p>
+            <div class="inovasi-card">
+              <h5><i class="fas fa-check-circle"></i> Hasil</h5>
+              <ul>
+                <li>Sampah berkurang drastis, pupuk organik dihasilkan</li>
+                <li>Maggot panen rutin, jadi pakan ternak & usaha</li>
+                <li>Siswa paham keberlanjutan melalui kurikulum</li>
+                <li>Program jadi inspirasi sekolah lain di Jawa Barat</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
 
-        <div id="keunggulan" class="menu-section">
-            <h3>Keunggulan dan Kebaharuan Inovasi</h3>
 
-            <div class="sub-subjudul">a. Keunggulan</div>
-            <ul>
-                <li>Mengurangi **limbah organik** dengan metode yang cepat dan efisien.</li>
-                <li>Menghasilkan **pupuk organik berkualitas** yang meningkatkan kesuburan tanah.</li>
-                <li>Membangun **kesadaran lingkungan siswa** melalui praktik langsung.</li>
-            </ul>
+       <div id="keunggulan" class="menu-section">
+          <h3>Keunggulan & Kebaruan Inovasi</h3>
 
-            <div class="sub-subjudul">b. Kebaharuan</div>
-            <ul>
-                <li>**Pemanfaatan maggot BSF** sebagai agen biokonversi di lingkungan sekolah.</li>
-                <li>Mengintegrasikan **pendidikan berbasis proyek** dalam sistem pengelolaan limbah sekolah.</li>
-            </ul>
+          <div class="inovasi-grid">
+            <div class="inovasi-card">
+              <h5><i class="fas fa-check"></i> Keunggulan</h5>
+              <ul>
+                <li>Pengolahan limbah organik cepat & efisien</li>
+                <li>Hasilkan pupuk organik berkualitas tinggi</li>
+                <li>Edukasi langsung bagi siswa melalui praktik nyata</li>
+                <li>Dukung pertanian lokal & ketahanan pangan</li>
+              </ul>
+            </div>
+
+            <div class="inovasi-card">
+              <h5><i class="fas fa-lightbulb"></i> Kebaruan</h5>
+              <ul>
+                <li>Pemanfaatan maggot BSF sebagai agen biokonversi di sekolah</li>
+                <li>Inovasi berbasis proyek nyata yang terintegrasi ke dalam kurikulum</li>
+                <li>Penerapan ekonomi sirkular di lingkungan pendidikan</li>
+                <li>Model kolaborasi sekolah–komunitas yang bisa direplikasi</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
 
         <div id="berkelanjutan" class="menu-section">
-            <h3>Keberlanjutan Inovasi</h3>
+          <h3>Keberlanjutan Inovasi</h3>
 
-            <p>Untuk memastikan program biokonversi limbah dapur dengan maggot BSF terus berkembang dan memberikan manfaat jangka panjang, ada beberapa aspek utama yang perlu diperhatikan:</p>
+          <div class="inovasi-grid">
+            <div class="inovasi-card">
+              <h5><i class="fas fa-sync-alt"></i> Evaluasi & Optimasi</h5>
+              <ul>
+                <li>Meninjau efektivitas biokonversi & hasil dampaknya</li>
+                <li>Optimalisasi teknik budidaya maggot & efisiensi proses</li>
+                <li>Penerapan teknologi (sensor, otomasi) untuk keberlanjutan</li>
+              </ul>
+            </div>
 
-            <div class="sub-subjudul">a. Evaluasi dan Optimalisasi Metode</div>
-            <ul>
-                <li>Meninjau **efektivitas proses biokonversi** dan melakukan penyesuaian untuk meningkatkan efisiensi.</li>
-                <li>Mengevaluasi **dampak terhadap lingkungan sekolah**, seperti pengurangan jumlah limbah dan manfaat pupuk organik bagi tanaman.</li>
-                <li>Mengembangkan **teknik budidaya maggot** agar lebih produktif dan mudah diterapkan.</li>
-            </ul>
+            <div class="inovasi-card">
+              <h5><i class="fas fa-book"></i> Integrasi dalam Sekolah</h5>
+              <ul>
+                <li>Masuk ke dalam kurikulum & tugas praktik siswa</li>
+                <li>Kegiatan workshop & seminar tentang ekonomi sirkular</li>
+                <li>Regenerasi tim melalui edukasi siswa baru</li>
+              </ul>
+            </div>
 
-            <div class="sub-subjudul">b. Integrasi dalam Kurikulum dan Kegiatan Sekolah</div>
-            <ul>
-                <li>Menggabungkan program ini ke dalam **kurikulum pendidikan lingkungan** di sekolah.</li>
-                <li>Menjadikan proyek biokonversi sebagai bagian dari **tugas praktik bagi siswa**.</li>
-                <li>Mengadakan kegiatan **workshop atau seminar** untuk memperluas pemahaman tentang ekonomi sirkular dan pengelolaan limbah.</li>
-            </ul>
+            <div class="inovasi-card">
+              <h5><i class="fas fa-handshake"></i> Kolaborasi & Dukungan</h5>
+              <ul>
+                <li>Kerja sama dengan komunitas, universitas, & pemda</li>
+                <li>Undang ahli & praktisi untuk pengayaan program</li>
+                <li>Kembangkan model replikasi ke sekolah lain</li>
+              </ul>
+            </div>
 
-            <div class="sub-subjudul">c. Kolaborasi dan Dukungan Komunitas</div>
-            <ul>
-                <li>Bekerja sama dengan **pihak eksternal** seperti komunitas lingkungan, pemerintah daerah, atau universitas untuk mendapatkan dukungan dan pengembangan lebih lanjut.</li>
-                <li>Mengundang **ahli lingkungan atau praktisi biokonversi** untuk berbagi pengalaman dan wawasan.</li>
-                <li>Mengembangkan **model kerja sama dengan masyarakat sekitar** agar inovasi ini bisa diterapkan lebih luas.</li>
-            </ul>
-
-            <div class="sub-subjudul">d. Peningkatan Kesadaran dan Kampanye Publik</div>
-            <ul>
-                <li>Membuat **materi edukasi** dalam bentuk video, infografis, atau media sosial untuk menyebarluaskan manfaat biokonversi.</li>
-                <li>Mengadakan sesi diskusi dan **sosialisasi kepada siswa baru** agar program terus berjalan dengan regenerasi tim.</li>
-                <li>Mengembangkan **strategi pemasaran** untuk pupuk organik hasil biokonversi, jika memungkinkan.</li>
-            </ul>
-
-            <div class="sub-subjudul">e. Perencanaan Keuangan dan Keberlanjutan Anggaran</div>
-            <ul>
-                <li>Memastikan adanya **anggaran berkelanjutan** untuk perawatan dan pengembangan program.</li>
-                <li>Mencari peluang **pendanaan dari sponsor, hibah pendidikan**, atau kerja sama dengan industri ramah lingkungan.</li>
-                <li>Menyusun strategi **pemanfaatan pupuk organik sebagai bagian dari sumber pemasukan** sekolah atau program sosial.</li>
-            </ul>
+            <div class="inovasi-card">
+              <h5><i class="fas fa-coins"></i> Strategi Pembiayaan</h5>
+              <ul>
+                <li>Pendanaan dari sponsor, hibah, & industri hijau</li>
+                <li>Penjualan pupuk organik sebagai sumber dana program</li>
+                <li>Anggaran berkelanjutan untuk perawatan dan ekspansi</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
 
         <div id="dokumentasi" class="menu-section">
             <h3>Dokumentasi Kegiatan</h3>
@@ -882,41 +945,41 @@
             <h4>Proses Persiapan</h4>
             <p>Tahap awal dalam inovasi ini meliputi persiapan lokasi, alat, dan bahan untuk budidaya maggot dan pengolahan limbah.</p>
             <div class="dokumentasi-grid">
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="persiapan_lokasi_besar.jpg" data-caption="Membersihkan dan menyiapkan area budidaya.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="persiapan_lokasi_besar.jpg" data-caption="">
                     <img src="persiapan_lokasi_kecil.jpg" alt="Persiapan Lokasi">
                     <div class="dokumentasi-caption">Membersihkan dan menyiapkan area budidaya.</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="persiapan_lokasi_besar1.jpg" data-caption="Penyortiran limbah organik dari kantin sekolah.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="persiapan_lokasi_besar1.jpg" data-caption="">
                     <img src="persiapan_lokasi_kecil1.jpg" alt="Penyortiran Limbah">
                     <div class="dokumentasi-caption">Pengecetan dan Pengkondisian Ruangan</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="persiapan_lokasi_besar2.jpg" data-caption="Pengadaan bibit maggot BSF berkualitas.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="persiapan_lokasi_besar2.jpg" data-caption="">
                     <img src="persiapan_lokasi_kecil2.jpg" alt="Pengadaan Bibit Maggot">
                     <div class="dokumentasi-caption">Ruangan Keskretariatan dan Administrasi</div>
                 </div>
 
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="beberes1besar.jpeg" data-caption="Membersihkan dan menyiapkan area budidaya.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="beberes1besar.jpeg" data-caption="">
                     <img src="beberes1kecil.jpeg" alt="Persiapan Lokasi">
                     <div class="dokumentasi-caption">Membersihkan dan menyiapkan area budidaya Lalat</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="beberes2besar.jpeg" data-caption="Penyortiran limbah organik dari kantin sekolah.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="beberes2besar.jpeg" data-caption="">
                     <img src="beberes2besar.jpeg" alt="Penyortiran Limbah">
                     <div class="dokumentasi-caption">Membersihkan dan menyiapkan area ruang terbuka</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="beberes3besar.jpeg" data-caption="Pengadaan bibit maggot BSF berkualitas.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="beberes3besar.jpeg" data-caption="">
                     <img src="beberes3besar.jpeg" alt="Pengadaan Bibit Maggot">
                     <div class="dokumentasi-caption">Pengepelan dan Penyemprotan dari debu</div>
                 </div>
 
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="Bibit_Magot_Besar.jpg" data-caption="Membersihkan dan menyiapkan area budidaya.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="Bibit_Magot_Besar.jpg" data-caption="">
                     <img src="Bibit_Magot_Kecil.jpg" alt="Persiapan Lokasi">
                     <div class="dokumentasi-caption">Menyiapkan Bibit Maggot</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="kandang_besar.jpeg" data-caption="Penyortiran limbah organik dari kantin sekolah.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="kandang_besar.jpeg" data-caption="">
                     <img src="kandang_kecil.jpeg" alt="Penyortiran Limbah">
                     <div class="dokumentasi-caption">Menyiapkan Kandang Lalat BSF dan Tempat Lalat Bertelur</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="Menyiapkan_biopon_kecil.jpg" data-caption="Pengadaan bibit maggot BSF berkualitas.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="Menyiapkan_biopon_kecil.jpg" data-caption="">
                     <img src="Menyiapkan_biopon_kecil.jpg" alt="Pengadaan Bibit Maggot">
                     <div class="dokumentasi-caption">Membagi Maggot Kedalam 2 Wadah Biopon</div>
                 </div>
@@ -925,27 +988,27 @@
             <h4>Proses Budidaya</h4>
             <p>Proses inti biokonversi di mana maggot BSF mengurai limbah organik.</p>
             <div class="dokumentasi-grid">
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="makan_maggot_besar.jpeg" data-caption="Pemberian pakan limbah pada maggot.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="makan_maggot_besar.jpeg" data-caption="">
                     <img src="makan_maggot_kecil.jpeg" alt="Budidaya Maggot 1">
                     <div class="dokumentasi-caption">Pemberian pakan limbah Dapur pada maggot.</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="sampah_dapur_besar.jpeg" data-caption="Perawatan rutin dan pemantauan pertumbuhan maggot.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="sampah_dapur_besar.jpeg" data-caption="">
                     <img src="sampah_dapur_kecil.jpeg" alt="Budidaya Maggot 2">
                     <div class="dokumentasi-caption">Pakan Limbah Dapur Campuran Kulit Buah dan Sisa Masakan</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="cek_telur_besar.jpg" data-caption="Panen maggot yang siap digunakan sebagai pakan.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="cek_telur_besar.jpg" data-caption="">
                     <img src="cek_telur_kecil.jpg" alt="Panen Maggot BSF">
                     <div class="dokumentasi-caption">Pengecekan Rutin Telur Lalat BSF</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="pengawasanbesar.jpeg" data-caption="Pemberian pakan limbah pada maggot.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="pengawasanbesar.jpeg" data-caption="">
                     <img src="pengawasankecil.jpeg" alt="Budidaya Maggot 1">
                     <div class="dokumentasi-caption">Pengawasan Rutin Kondisi Maggot dan Kandang BSF</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="sisanasibesar.jpeg" data-caption="Perawatan rutin dan pemantauan pertumbuhan maggot.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="sisanasibesar.jpeg" data-caption="">
                     <img src="sisanasikecil.jpeg" alt="Budidaya Maggot 2">
                     <div class="dokumentasi-caption">Setoran Sampah Dapur Sisa Nasi dan Sayuran</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="tutupbesar.jpg" data-caption="Panen maggot yang siap digunakan sebagai pakan.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="tutupbesar.jpg" data-caption="">
                     <img src="tutupkecil.jpg" alt="Panen Maggot BSF">
                     <div class="dokumentasi-caption">Penutupan Biopon Menggunakan Ram Kawat Agar Terhindar dari Hama Tikus dan Lalat hijau</div>
                 </div>
@@ -955,15 +1018,15 @@
             <h4>Proses Pengolahan Kasgot</h4>
             <p>Mengubah sisa limbah (kasgot) dari budidaya maggot menjadi pupuk organik.</p>
             <div class="dokumentasi-grid">
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="jemurkasgotbesar.jpg" data-caption="Proses pengeringan kasgot sebelum diolah.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="jemurkasgotbesar.jpg" data-caption="">
                     <img src="jemurkasgotkecil.jpg" alt="Pengeringan Kasgot">
                     <div class="dokumentasi-caption">Proses pengeringan kasgot sebelum diolah.</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="ayakbesar.jpg" data-caption="Pengayakan kasgot menjadi pupuk siap pakai.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="ayakbesar.jpg" data-caption="">
                     <img src="ayakkecil.jpg" alt="Pengayakan Pupuk">
                     <div class="dokumentasi-caption">Pengayakan kasgot menjadi pupuk siap pakai.</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="hasilbesar.jpg" data-caption="Hasil akhir pupuk organik dari kasgot.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="hasilbesar.jpg" data-caption="">
                     <img src="hasilkecil.jpg" alt="Pupuk Organik Jadi">
                     <div class="dokumentasi-caption">Hasil akhir pupuk organik dari kasgot.</div>
                 </div>
@@ -972,15 +1035,15 @@
             <h4>Proses Pengemasan</h4>
             <p>Pengemasan pupuk organik hasil biokonversi untuk distribusi dan pemanfaatan.</p>
             <div class="dokumentasi-grid">
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="penimbanganbesar.jpg" data-caption="Pengemasan pupuk organik ke dalam karung/kemasan.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="penimbanganbesar.jpg" data-caption="">
                     <img src="penimbangankecil.jpg" alt="Pengemasan Pupuk 1">
                     <div class="dokumentasi-caption">Proses Penimbangan kemasan 1 kg</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="pengemasanbesar.jpg" data-caption="Pemberian label pada kemasan pupuk.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="pengemasanbesar.jpg" data-caption="">
                     <img src="pengemasankecil.jpg" alt="Pelabelan Produk">
                     <div class="dokumentasi-caption">Proses Sealer Kemasan</div>
                 </div>
-                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="hasilprodukbesar.jpg" data-caption="Pupuk organik siap didistribusikan dan digunakan.">
+                <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="hasilprodukbesar.jpg" data-caption="">
                     <img src="hasilprodukkecil.jpg" alt="Siap Distribusi">
                     <div class="dokumentasi-caption">Pupuk organik siap didistribusikan dan digunakan.</div>
                 </div>
@@ -989,35 +1052,35 @@
             <h4>Video Kegiatan</h4>
         <p>Saksikan berbagai kegiatan inovasi biokonversi limbah dapur dengan maggot BSF melalui video berikut:</p>
         <div class="dokumentasi-grid">
-            <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-video-src="video1.MP4" data-caption="Kegiatan Persiapan Area Budidaya">
+            <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-video-src="video1.MP4" data-caption="">
                 <div class="video-placeholder">
                     <img src="v_penjemuran.jpg" alt="Video Persiapan">
                     <!-- <span>Putar Video</span> -->
                 </div>
                 <div class="dokumentasi-caption">Proses Penjemuran Kasgot</div>
             </div>
-            <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-video-src="video2.MP4" data-caption="Proses Pemberian Pakan Maggot BSF">
+            <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-video-src="video2.MP4" data-caption="">
                 <div class="video-placeholder">
                     <img src="v_pengayakan.jpg" alt="Video Pakan Maggot">
                     <!-- <span>Putar Video</span> -->
                 </div>
                 <div class="dokumentasi-caption">Proses Pengayakan/Penyaringan Kasgot Kering</div>
             </div>
-            <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-video-src="video3.mp4" data-caption="Panen Maggot BSF untuk Pakan Ternak">
+            <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-video-src="video3.mp4" data-caption="">
                 <div class="video-placeholder">
                     <img src="v_hasil.jpg" alt="Video Panen Maggot">
                     <!-- <span>Putar Video</span> -->
                 </div>
                 <div class="dokumentasi-caption">Hasil Kasgot Yang Telah Di Saring</div>
             </div>
-            <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-video-src="video4.mp4" data-caption="Pengolahan Kasgot Menjadi Pupuk Organik">
+            <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-video-src="video4.mp4" data-caption="">
                 <div class="video-placeholder">
                     <img src="v_3g.jpg" alt="Video Pengolahan Kasgot">
                     <!-- <span>Putar Video</span> -->
                 </div>
                 <div class="dokumentasi-caption">Sosialisasi Produk Kasgot oleh 3G</div>
             </div>
-            <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-video-src="video5.mp4" data-caption="Pengemasan Pupuk Organik Hasil Biokonversi">
+            <div class="dokumentasi-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-video-src="video5.mp4" data-caption="">
                 <div class="video-placeholder">
                     <img src="v_gilang.jpg" alt="Video Pengemasan Pupuk">
                     <!-- <span>Putar Video</span> -->
@@ -1029,6 +1092,38 @@
 
             <p>Kami akan terus memperbarui bagian ini dengan foto dan video kegiatan terbaru.</p>
         </div>
+
+        <div id="statistik" class="menu-section">
+    <h3>Data Statistik Sampah Bandung Raya (2023)</h3>
+    <p>Berikut adalah data jumlah sampah yang ditangani di wilayah Bandung Raya berdasarkan data resmi tahun 2023:</p>
+    <p>
+    Sumber data: 
+    <a href="https://opendata.jabarprov.go.id/id/dataset/jumlah-sampah-yang-ditangani-berdasarkan-kabupatenkota-di-jawa-barat" target="_blank" rel="noopener noreferrer">
+        opendata.jabarprov.go.id
+    </a>
+</p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle" style="background-color: #fff;">
+            <thead class="table-success text-center">
+                <tr>
+                    <th>Kabupaten/Kota</th>
+                    <th>Jumlah Sampah</th>
+                    <th>Satuan</th>
+                    <th>Tahun</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Kabupaten Bandung</td><td>254.46</td><td>Ton per Hari</td><td>2023</td></tr>
+                <tr><td>Kabupaten Bandung Barat</td><td>14</td><td>Ton per Hari</td><td>2023</td></tr>
+                <tr><td>Kota Bandung</td><td>388</td><td>Ton per Hari</td><td>2023</td></tr>
+                <tr><td>Kota Cimahi</td><td>47.14</td><td>Ton per Hari</td><td>2023</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <canvas id="grafikSampah" height="300"></canvas>
+</div>
 
     </div>
 
@@ -1047,6 +1142,43 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const ctx = document.getElementById('grafikSampah').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Kab. Bandung', 'Kab. Bandung Barat', 'Kota Bandung', 'Kota Cimahi'],
+                        datasets: [{
+                            label: 'Jumlah Sampah (Ton per Hari)',
+                            data: [254.46, 14, 388, 47.14],
+                            backgroundColor: ['#66bb6a', '#ffee58', '#42a5f5', '#ab47bc']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { display: false },
+                            title: {
+                                display: true,
+                                text: 'Grafik Jumlah Sampah Bandung Raya Tahun 2023'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + ' ton';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -1116,6 +1248,12 @@
             });
         });
     </script>
+
+
+    <footer class="footer-lestari">
+      <p>Tim IT Gerakan Lestari – 2025</p>
+    </footer>
+
 </body>
 
 </html>
