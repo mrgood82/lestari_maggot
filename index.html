@@ -1,4 +1,639 @@
-<h4 class="mt-5 mb-3">Anggaran yang Digunakan</h4>
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inovasi Maggot BSF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display= برق&gt;" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f3f3f3;
+            font-size: 18px;
+        }
+
+        #splash {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        #splash img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            transition: transform 2s ease, opacity 2s ease;
+        }
+
+        #splash img.grow {
+            transform: scale(1.2);
+            opacity: 0;
+        }
+
+        .menu-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .active-section {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: linear-gradient(to bottom, #e0f2e9, #fff8cc, #ffe5e5);
+            padding-top: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 18px;
+            transition: transform 0.3s ease-in-out;
+            overflow-y: auto;
+            padding-bottom: 20px;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            color: #1a1a1a;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s, color 0.3s;
+        }
+
+        .sidebar a i {
+            width: 20px;
+        }
+
+        .sidebar a:hover {
+            background: #000;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            padding-top: 20px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        .judul-inovasi {
+            font-family: 'Indie Flower', cursive;
+            font-size: 2.5rem;
+            color: #2e7d32;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .subjudul-inovasi {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+
+        .innovator-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card {
+            border: none;
+            background-color: transparent;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .brand-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px 20px 20px;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .brand-logo img {
+            height: 120px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-footer {
+            display: none;
+        }
+
+        .logo-atas-inovasi {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .logo-atas-inovasi img {
+            height: 60px;
+        }
+
+        .menu-section h3 {
+            background: linear-gradient(90deg, #a8edea, #fed6e3);
+            padding: 12px 20px;
+            border-left: 8px solid #4caf50;
+            border-radius: 6px;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-section h4 {
+            background-color: #e6ffe6;
+            padding: 10px 15px;
+            border-left: 6px solid #66bb6a;
+            border-radius: 4px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        .highlight-regulasi {
+            background-color: #fff59d;
+            font-weight: bold;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .sub-subjudul {
+            font-weight: bold;
+            background-color: #d1ecf1;
+            padding: 5px 10px;
+            border-left: 6px solid #0c5460;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+
+        .menu-section table {
+            margin-top: 30px;
+        }
+
+        .menu-section table:first-of-type {
+            margin-top: 0;
+        }
+
+        .menu-section ul li::marker {
+            content: "\f111 ";
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #4caf50;
+            font-size: 0.8em;
+        }
+
+        .hamburger-menu {
+            display: none;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1001;
+            font-size: 1.8rem;
+            color: #1a1a1a;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Konten dokumentasi */
+        .dokumentasi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .dokumentasi-item {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer; /* Menandakan elemen bisa diklik */
+        }
+
+        .dokumentasi-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .dokumentasi-item img,
+        .dokumentasi-item video { /* Styling untuk gambar dan video dalam grid */
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .dokumentasi-caption {
+            padding: 15px;
+            font-size: 1rem;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Styling untuk modal gambar */
+        .modal-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0; /* Hapus padding default modal body */
+        }
+
+        .modal-body img,
+        .modal-body video {
+            max-width: 100%;
+            max-height: 80vh; /* Batasi tinggi gambar/video di modal */
+            object-fit: contain; /* Agar gambar tidak terpotong */
+            display: block;
+        }
+
+        /* --- MEDIA QUERIES UNTUK LAYAR KECIL (RESPONSIVE) --- */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 0;
+                transform: translateX(-250px);
+                padding-top: 60px;
+            }
+
+            .sidebar.active {
+                width: 250px;
+                transform: translateX(0);
+            }
+
+            .content {
+                margin-left: 0;
+                padding-top: 60px;
+            }
+
+            .hamburger-menu {
+                display: block;
+            }
+
+            .judul-inovasi {
+                font-size: 1.8rem;
+            }
+
+            .subjudul-inovasi {
+                font-size: 1.2rem;
+            }
+
+            .logo-atas-inovasi img {
+                height: 40px;
+            }
+
+            .innovator-card {
+                margin-bottom: 20px;
+            }
+
+            .menu-section h3 {
+                font-size: 1.4rem;
+                padding: 10px 15px;
+                border-left: 6px solid #4caf50;
+            }
+
+            .menu-section h4 {
+                font-size: 1.2rem;
+                padding: 8px 12px;
+                border-left: 4px solid #66bb6a;
+            }
+
+            .menu-section ul {
+                padding-left: 20px;
+            }
+
+            .menu-section table {
+                font-size: 0.9em;
+            }
+
+            .menu-section table th,
+            .menu-section table td {
+                padding: 8px;
+            }
+
+            .dokumentasi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="splash">
+        <img src="lestari.jpg" alt="Gambar Pembuka">
+    </div>
+
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <div>
+            <div class="brand-logo">
+                <img src="logo.png" alt="Logo Kecil">
+                <div><strong>Gerakan LESTARI</strong></div>
+            </div>
+            <a href="#" onclick="showSection('profile'); toggleSidebar()"><i class="fas fa-user-circle"></i> Profil</a>
+            <a href="#" onclick="showSection('dasar'); toggleSidebar()"><i class="fas fa-gavel"></i> Dasar Hukum</a>
+            <a href="#" onclick="showSection('masalah'); toggleSidebar()"><i class="fas fa-exclamation-triangle"></i> Permasalahan</a>
+            <a href="#" onclick="showSection('tahapan'); toggleSidebar()"><i class="fas fa-clipboard-list"></i> Tahapan Pelaksanaan</a>
+            <a href="#" onclick="showSection('timeline'); toggleSidebar()"><i class="fas fa-clock"></i> Timeline</a>
+            <a href="#" onclick="showSection('manfaat'); toggleSidebar()"><i class="fas fa-lightbulb"></i> Tujuan & Manfaat</a>
+            <a href="#" onclick="showSection('keunggulan'); toggleSidebar()"><i class="fas fa-star"></i> Keunggulan</a>
+            <a href="#" onclick="showSection('berkelanjutan'); toggleSidebar()"><i class="fas fa-sync-alt"></i> Keberlanjutan</a>
+            <a href="#" onclick="showSection('dokumentasi'); toggleSidebar()"><i class="fas fa-images"></i> Dokumentasi Kegiatan</a>
+        </div>
+    </div>
+
+    <div class="content" id="content">
+        <div id="profile" class="menu-section active-section">
+            <div class="logo-atas-inovasi">
+                <img src="kemendagri.png" alt="Logo Kemendagri">
+                <img src="kbb.png" alt="Logo KBB">
+                <img src="sman2.png" alt="Logo Sekolah">
+                <img src="Adiwiyata.png" alt="Logo Adiwiyata">
+            </div>
+            <h2 class="judul-inovasi">Biokonversi Limbah Dapur oleh Maggot BSF</h2>
+            <h5 class="subjudul-inovasi">Solusi Hijau ADIWIYATA SMA Negeri 2 Padalarang untuk Pupuk Organik Berkelanjutan</h5>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div class="card text-center innovator-card">
+                        <img src="inovator1.png" class="card-img-top" alt="Foto Inovator 1">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center innovator-card">
+                        <img src="inovator2.png" class="card-img-top" alt="Foto Inovator 2">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center innovator-card">
+                        <img src="inovator3.png" class="card-img-top" alt="Foto Inovator 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dasar" class="menu-section">
+            <h3>Dasar Hukum</h3>
+            <ul>
+                <li><span class="highlight-regulasi">Peraturan Menteri Lingkungan Hidup dan Kehutanan Nomor 52 Tahun 2019</span> tentang Gerakan Peduli dan Berbudaya Lingkungan Hidup di Sekolah.</li>
+                <li><span class="highlight-regulasi">Peraturan Gubernur Jawa Barat Nomor 4 Tahun 2020</span> tentang Pedoman Pelaksanaan Penegakan Hukum Lingkungan Hidup.</li>
+                <li><span class="highlight-regulasi">Undang-Undang No. 18 Tahun 2008</span> tentang Pengelolaan Sampah, yang mendorong pengelolaan limbah berbasis pemanfaatan.</li>
+                <li><span class="highlight-regulasi">Peraturan Bupati (Perbup) Kabupaten Bandung Barat Nomor 16 Tahun 2019</span> tentang Kebijakan dan Strategi Daerah dalam Pengelolaan Sampah Rumah Tangga dan Sampah Sejenis Sampah Rumah Tangga Tahun 2019-2025.</li>
+                <li><span class="highlight-regulasi">Program ADIWIYATA SMAN 2 Padalarang</span>, yang bertujuan meningkatkan kesadaran lingkungan di sekolah melalui Gerakan PBLHS.</li>
+            </ul>
+        </div>
+
+        <div id="masalah" class="menu-section">
+            <h3>Hal-Hal Yang Menyebabkan Timbulnya Permasalahan</h3>
+            <div class="sub-subjudul">Permasalahan Makro</div>
+            <ul>
+                <li><span class="highlight-regulasi">Tingginya volume sampah organik</span> yang tidak terkelola dengan baik, berkontribusi pada pencemaran lingkungan.</li>
+                <li><span class="highlight-regulasi">Kurangnya kesadaran masyarakat</span> terhadap ekonomi sirkular dan pemanfaatan limbah sebagai sumber daya.</li>
+            </ul>
+            <div class="sub-subjudul">Permasalahan Mikro</div>
+            <ul>
+                <li><span class="highlight-regulasi">Limbah dapur sekolah</span> tidak memiliki sistem pengolahan yang efisien, sering kali hanya dibuang begitu saja.</li>
+                <li><span class="highlight-regulasi">Minimnya edukasi siswa</span> terkait biokonversi dan potensi penggunaan maggot BSF dalam pengelolaan limbah.</li>
+                <li><span class="highlight-regulasi">Kurangnya kesadaran warga sekolah</span> dalam memilah sampah.</li>
+            </ul>
+        </div>
+
+        <div id="tahapan" class="menu-section">
+            <h3 class="mb-4">Tahapan Pelaksanaan Inovasi</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped align-middle" style="background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <thead class="table-success text-center">
+                        <tr>
+                            <th style="width: 20%;">Tahapan</th>
+                            <th>Upaya yang Dilakukan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Perencanaan</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Identifikasi masalah pengelolaan limbah dapur di sekolah.</li>
+                                    <li>Studi literatur tentang biokonversi dengan maggot BSF.</li>
+                                    <li>Penyusunan proposal dan desain proyek.</li>
+                                    <li>Koordinasi dengan guru pembimbing dan pihak sekolah.</li>
+                                    <li>Pengajuan anggaran dan pencarian sumber pendanaan.</li>
+                                    <li>Penyusunan strategi keberlanjutan proyek.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Pelaksanaan</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Pengadaan wadah budidaya maggot dan alat pengolahan.</li>
+                                    <li>Pembentukan tim siswa yang bertanggung jawab atas berbagai aspek proyek.</li>
+                                    <li>Pelatihan budidaya maggot dan pengolahan limbah organik.</li>
+                                    <li>Sosialisasi program kepada siswa lain dan staf sekolah.</li>
+                                    <li>Pengumpulan dan pemilahan limbah dapur dari kantin serta rumah tangga siswa.</li>
+                                    <li>Proses budidaya maggot hingga produksi pupuk organik.</li>
+                                    <li>Penerapan pupuk di kebun sekolah dan evaluasi hasilnya.</li>
+                                    <li>Dokumentasi dan publikasi program melalui video kampanye serta laporan tertulis.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Pembaharuan Keberlanjutan</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Evaluasi efektivitas metode biokonversi yang digunakan.</li>
+                                    <li>Optimalisasi teknik budidaya maggot untuk meningkatkan produktivitas.</li>
+                                    <li>Pengembangan sistem pemantauan dan pencatatan dampak lingkungan.</li>
+                                    <li>Integrasi program dalam kurikulum pendidikan lingkungan sekolah.</li>
+                                    <li>Kolaborasi dengan komunitas dan pihak eksternal untuk ekspansi program.</li>
+                                    <li>Mencari dukungan lebih luas agar inovasi ini terus berlanjut dan berkembang.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="timeline" class="menu-section">
+            <h3>Timeline Inovasi Biokonversi Limbah Dapur dengan Maggot BSF</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped align-middle" style="background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <thead class="table-success text-center">
+                        <tr>
+                            <th style="width: 15%;">Tahapan</th>
+                            <th style="width: 15%;">Waktu</th>
+                            <th>Kegiatan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Perencanaan</strong></td>
+                            <td>Maret 2025</td>
+                            <td>
+                                <ul>
+                                    <li>Identifikasi masalah limbah dapur di sekolah.</li>
+                                    <li>Studi literatur tentang biokonversi dengan maggot.</li>
+                                    <li>Penyusunan proposal inovasi.</li>
+                                    <li>Koordinasi dengan guru pembimbing & sekolah.</li>
+                                    <li>Pengajuan anggaran proyek.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Persiapan</strong></td>
+                            <td>Awal April 2025</td>
+                            <td>
+                                <ul>
+                                    <li>Pengadaan wadah budidaya maggot & peralatan pengolahan limbah.</li>
+                                    <li>Pembentukan tim kerja siswa.</li>
+                                    <li>Pelatihan teknik budidaya maggot & pengolahan limbah.</li>
+                                    <li>Sosialisasi program kepada siswa dan staf sekolah.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pelaksanaan</strong></td>
+                            <td>April - Mei 2025</td>
+                            <td>
+                                <ul>
+                                    <li>Pengumpulan limbah dapur dari kantin dan rumah tangga siswa.</li>
+                                    <li>Budidaya maggot BSF dalam wadah khusus.</li>
+                                    <li>Produksi pupuk organik dari hasil biokonversi **dan Pengemasan**.</li>
+                                    <li>Edukasi & dokumentasi program melalui video kampanye.</li>
+                                    <li>Evaluasi dan penyempurnaan metode biokonversi.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="mt-5 mb-3">Sumber Daya Manusia</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped align-middle" style="background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <thead class="table-success text-center">
+                        <tr>
+                            <th style="width: 30%;">Tim yang Terlibat</th>
+                            <th>Peran</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tim Siswa Gerakan Lestari</strong></td>
+                            <td>Pelaksana utama dalam pengelolaan limbah dan budidaya maggot.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Guru Pembimbing</strong></td>
+                            <td>Memberikan arahan dan supervisi program.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ahli Lingkungan/Pembudidaya Maggot</strong></td>
+                            <td>Konsultan eksternal jika diperlukan.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Relawan Sekolah dan 3G</strong></td>
+                            <td>Membantu dalam pengumpulan dan pemilahan limbah dapur.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="mt-5 mb-3">Prasarana yang Digunakan</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped align-middle" style="background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <thead class="table-success text-center">
+                        <tr>
+                            <th style="width: 30%;">Jenis Prasarana</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Wadah Budidaya Maggot</strong></td>
+                            <td>Bak / kotak budidaya, Rak penyimpanan.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Peralatan Pengolahan Limbah</strong></td>
+                            <td>Baskom lubang untuk menyaring sampah, ember/wadah fermentasi, Copper Sampah Organik.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tempat Penyimpanan Pupuk</strong></td>
+                            <td>Karung atau drum.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Alat Dokumentasi</strong></td>
+                            <td>Kamera, komputer untuk video editing.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Area Uji Coba</strong></td>
+                            <td>Ruang Inovasi/Ruang Daur Ulang/Ruang Komposter dan Kebun sekolah untuk penerapan pupuk.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="mt-5 mb-3">Anggaran yang Digunakan</h4>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped align-middle" style="background-color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                     <thead class="table-success text-center">
