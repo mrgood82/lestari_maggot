@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body, html {
+        body,
+        html {
             height: 100%;
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
@@ -67,6 +68,7 @@
             flex-direction: column;
             justify-content: space-between;
             font-size: 18px;
+            transition: transform 0.3s ease-in-out; /* Tambahkan transisi */
         }
 
         .sidebar a {
@@ -93,7 +95,8 @@
         .content {
             margin-left: 270px;
             padding: 20px;
-            padding-top: 20px; /* Sesuaikan jika perlu */
+            padding-top: 20px;
+            transition: margin-left 0.3s ease-in-out; /* Tambahkan transisi */
         }
 
         .judul-inovasi {
@@ -168,9 +171,10 @@
             border-radius: 6px;
             font-size: 1.6rem;
             margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .menu-section h4 { /* Styling for sub-sections within a main section */
+
+        .menu-section h4 {
             background-color: #e6ffe6;
             padding: 10px 15px;
             border-left: 6px solid #66bb6a;
@@ -178,7 +182,7 @@
             margin-top: 30px;
             margin-bottom: 20px;
             font-size: 1.4rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
         }
 
         .highlight-regulasi {
@@ -198,21 +202,100 @@
             border-radius: 4px;
         }
 
-        /* Menambahkan margin atas untuk setiap tabel di dalam section yang sama agar ada spasi */
         .menu-section table {
-            margin-top: 30px; /* Jarak antara tabel */
+            margin-top: 30px;
         }
 
         .menu-section table:first-of-type {
-            margin-top: 0; /* Tidak perlu margin atas untuk tabel pertama di section */
+            margin-top: 0;
         }
 
         .menu-section ul li::marker {
-            content: "\f111 "; /* Font Awesome circle icon */
+            content: "\f111 ";
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             color: #4caf50;
             font-size: 0.8em;
+        }
+
+        /* Styling untuk tombol hamburger */
+        .hamburger-menu {
+            display: none; /* Sembunyikan secara default */
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1001;
+            font-size: 1.8rem;
+            color: #1a1a1a;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* --- MEDIA QUERIES UNTUK LAYAR KECIL (RESPONSIVE) --- */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 0; /* Sembunyikan sidebar di layar kecil */
+                transform: translateX(-250px); /* Geser ke kiri untuk menyembunyikan */
+                padding-top: 60px; /* Beri ruang untuk tombol hamburger */
+            }
+
+            .sidebar.active {
+                width: 250px;
+                transform: translateX(0); /* Tampilkan sidebar saat aktif */
+            }
+
+            .content {
+                margin-left: 0; /* Hapus margin kiri di layar kecil */
+                padding-top: 60px; /* Beri ruang untuk tombol hamburger */
+            }
+
+            .hamburger-menu {
+                display: block; /* Tampilkan tombol hamburger */
+            }
+
+            .judul-inovasi {
+                font-size: 1.8rem; /* Ukuran font lebih kecil untuk judul */
+            }
+
+            .subjudul-inovasi {
+                font-size: 1.2rem; /* Ukuran font lebih kecil untuk subjudul */
+            }
+
+            .logo-atas-inovasi img {
+                height: 40px; /* Ukuran logo lebih kecil */
+            }
+
+            .innovator-card {
+                margin-bottom: 20px; /* Tambah jarak antar kartu di layar kecil */
+            }
+
+            .menu-section h3 {
+                font-size: 1.4rem; /* Ukuran font lebih kecil untuk h3 */
+                padding: 10px 15px;
+                border-left: 6px solid #4caf50;
+            }
+
+            .menu-section h4 {
+                font-size: 1.2rem; /* Ukuran font lebih kecil untuk h4 */
+                padding: 8px 12px;
+                border-left: 4px solid #66bb6a;
+            }
+
+            .menu-section ul {
+                padding-left: 20px; /* Sesuaikan indentasi daftar */
+            }
+
+            .menu-section table {
+                font-size: 0.9em; /* Perkecil ukuran font tabel */
+            }
+
+            .menu-section table th,
+            .menu-section table td {
+                padding: 8px; /* Perkecil padding tabel */
+            }
         }
     </style>
 </head>
@@ -222,24 +305,28 @@
         <img src="lestari.jpg" alt="Gambar Pembuka">
     </div>
 
-    <div class="sidebar">
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="sidebar" id="sidebar">
         <div>
             <div class="brand-logo">
                 <img src="logo.png" alt="Logo Kecil">
                 <div><strong>Gerakan LESTARI</strong></div>
             </div>
-            <a href="#" onclick="showSection('profile')"><i class="fas fa-user-circle"></i> Profil</a>
-            <a href="#" onclick="showSection('dasar')"><i class="fas fa-gavel"></i> Dasar Hukum</a>
-            <a href="#" onclick="showSection('masalah')"><i class="fas fa-exclamation-triangle"></i> Permasalahan</a>
-            <a href="#" onclick="showSection('tahapan')"><i class="fas fa-clipboard-list"></i> Tahapan Pelaksanaan</a>
-            <a href="#" onclick="showSection('timeline')"><i class="fas fa-clock"></i> Timeline</a>
-            <a href="#" onclick="showSection('manfaat')"><i class="fas fa-lightbulb"></i> Tujuan & Manfaat</a>
-            <a href="#" onclick="showSection('keunggulan')"><i class="fas fa-star"></i> Keunggulan</a>
-            <a href="#" onclick="showSection('berkelanjutan')"><i class="fas fa-sync-alt"></i> Keberlanjutan</a>
+            <a href="#" onclick="showSection('profile'); toggleSidebar()"><i class="fas fa-user-circle"></i> Profil</a>
+            <a href="#" onclick="showSection('dasar'); toggleSidebar()"><i class="fas fa-gavel"></i> Dasar Hukum</a>
+            <a href="#" onclick="showSection('masalah'); toggleSidebar()"><i class="fas fa-exclamation-triangle"></i> Permasalahan</a>
+            <a href="#" onclick="showSection('tahapan'); toggleSidebar()"><i class="fas fa-clipboard-list"></i> Tahapan Pelaksanaan</a>
+            <a href="#" onclick="showSection('timeline'); toggleSidebar()"><i class="fas fa-clock"></i> Timeline</a>
+            <a href="#" onclick="showSection('manfaat'); toggleSidebar()"><i class="fas fa-lightbulb"></i> Tujuan & Manfaat</a>
+            <a href="#" onclick="showSection('keunggulan'); toggleSidebar()"><i class="fas fa-star"></i> Keunggulan</a>
+            <a href="#" onclick="showSection('berkelanjutan'); toggleSidebar()"><i class="fas fa-sync-alt"></i> Keberlanjutan</a>
         </div>
     </div>
 
-    <div class="content">
+    <div class="content" id="content">
         <div id="profile" class="menu-section active-section">
             <div class="logo-atas-inovasi">
                 <img src="kemendagri.png" alt="Logo Kemendagri">
@@ -693,7 +780,7 @@
 
             <div class="sub-subjudul">c. Kolaborasi dan Dukungan Komunitas</div>
             <ul>
-                <li>Bekerja sama dengan **p.ihak eksternal** seperti komunitas lingkungan, pemerintah daerah, atau universitas untuk mendapatkan dukungan dan pengembangan lebih lanjut.</li>
+                <li>Bekerja sama dengan **pihak eksternal** seperti komunitas lingkungan, pemerintah daerah, atau universitas untuk mendapatkan dukungan dan pengembangan lebih lanjut.</li>
                 <li>Mengundang **ahli lingkungan atau praktisi biokonversi** untuk berbagi pengalaman dan wawasan.</li>
                 <li>Mengembangkan **model kerja sama dengan masyarakat sekitar** agar inovasi ini bisa diterapkan lebih luas.</li>
             </ul>
@@ -733,6 +820,11 @@
                 target.style.display = 'block';
                 setTimeout(() => target.classList.add('active-section'), 10);
             }, 810);
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
         }
     </script>
 </body>
